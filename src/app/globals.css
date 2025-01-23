@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bs-primary: #0070f3;
+  --bs-info: #00a6ff;
+}
+
+@font-face {
+  font-family: "Sailor";
+  src: url("/fonts/Sailors.ttf");
+}
+
+body {
+  margin: 0;
+  background-color: #000913 !important;
+}
+
+.transition-opacity {
+  transition: opacity 0.3s ease;
+}
+
+.hover-opacity-100:hover {
+  opacity: 1 !important;
+}
+
+@keyframes underline-grow {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+underline-animate::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background-color: white; /* Color of the underline */
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.underline-animate:hover::after {
+  width: 100%;
+  animation: underline-grow 0.3s ease-in-out forwards;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  font-size: 1.5em;
+  color: white;  
+  background-color: white;
+  border-radius: 10%;
+}
